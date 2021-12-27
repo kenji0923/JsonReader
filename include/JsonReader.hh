@@ -3,8 +3,6 @@
 
 #include "json11.hpp"
 
-#include "TString.h"
-
 #include <string>
 #include <memory>
 
@@ -16,7 +14,6 @@ class JsonReader {
 public:
   JsonReader() {}
   JsonReader(std::string ReadFileName);
-  JsonReader(TString ReadFileName);
   JsonReader(const JsonReader& rh);
   JsonReader(JsonReader&& rh);
   ~JsonReader() {};

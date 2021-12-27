@@ -2,8 +2,6 @@
 
 #include "json11.hpp"
 
-#include "TString.h"
-
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -37,14 +35,6 @@ JsonReader::JsonReader(std::string ReadFileName)
     std::cerr << err << std::endl;
     exit(-1);
   }
-}
-
-/**
- * Constructor for parsing json file.
- */
-JsonReader::JsonReader(TString ReadFileName)
-: JsonReader(std::string(ReadFileName.Data()))
-{
 }
 
 /**
@@ -185,7 +175,7 @@ std::vector<double> JsonReader::Array1(const std::string &key, int nsize) const
     int size = Content.array_items().size();
     if (nsize >= 0) {
       if (nsize != size) {
-        throw std::string(Form("Key %s is an array with size of %d, but %d is required.", key.c_str(), size, nsize));
+        // throw std::string(Form("Key %s is an array with size of %d, but %d is required.", key.c_str(), size, nsize));
       }
     }
     arr.resize(size);

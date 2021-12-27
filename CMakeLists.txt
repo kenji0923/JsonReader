@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 set(project_name JsonReader)
 project(${project_name})
 
+set (CMAKE_CXX_STANDARD 11)
+
 add_subdirectory(${PROJECT_SOURCE_DIR}/lib/json11)
 
 add_library(${project_name} ${LIB_TYPE} ${PROJECT_SOURCE_DIR}/src/${project_name}.cc ${PROJECT_SOURCE_DIR}/include/${project_name}.hh)
